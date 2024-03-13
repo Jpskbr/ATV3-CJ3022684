@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace ATV-CJ3022684
+﻿namespace ATV-CJ3022684
 internal class Program
 {
     static void Main(string[] args)
@@ -144,7 +142,7 @@ if (escolhaUsuario < 0 || escolhaUsuario > 2)
     return;
 }
 
-int escolhaComputador = random.Next(0, 3);
+int escolhaComputador = RandomAccess.("0,3");
 
 Console.WriteLine("Você escolheu: " + opcoes[escolhaUsuario]);
 Console.WriteLine("O computador escolheu: " + opcoes[escolhaComputador]);
@@ -165,3 +163,79 @@ else
 }
 
 //atividade 7
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Bem-vindo à calculadora de descontos!");
+        Console.WriteLine("Digite o valor total da compra:");
+
+        decimal valorTotal = Convert.ToDecimal(Console.ReadLine());
+        decimal desconto = CalcularDesconto(valorTotal);
+        decimal valorFinal = valorTotal - (valorTotal * desconto);
+
+        Console.WriteLine($"Valor total: R${valorTotal}");
+        Console.WriteLine($"Desconto: {desconto * 100}%");
+        Console.WriteLine($"Valor final: R${valorFinal}");
+
+        Console.ReadLine();
+    }
+
+    static decimal CalcularDesconto(decimal valorTotal)
+    {
+        if (valorTotal > 100 && valorTotal <= 200)
+        {
+            return 0.1m; // 10% de desconto
+        }
+        else if (valorTotal > 200 && valorTotal <= 300)
+        {
+            return 0.2m; // 20% de desconto
+        }
+        else if (valorTotal > 300 && valorTotal <= 400)
+        {
+            return 0.3m; // 30% de desconto
+        }
+        else if (valorTotal > 400)
+        {
+            return 0.4m; // 40% de desconto
+        }
+        else
+        {
+            return 0; // Sem desconto
+        }
+    }
+}
+//atividade 8
+class Program
+{
+    static void Main()
+    {
+        Console.WriteLine("Calculadora de IMC - Índice de Massa Corporal");
+        Console.WriteLine("Digite o seu peso em kg:");
+        double peso = Convert.ToDouble(Console.ReadLine());
+
+        Console.WriteLine("Digite a sua altura em metros:");
+        double altura = Convert.ToDouble(Console.ReadLine());
+
+        double imc = peso / (altura * altura);
+        string categoria = "";
+
+        if (imc < 18.5)
+            categoria = "Abaixo do peso";
+        else if (imc <= 24.9)
+            categoria = "Peso normal";
+        else if (imc <= 29.9)
+            categoria = "Sobrepeso";
+        else if (imc <= 34.9)
+            categoria = "Obesidade grau I";
+        else if (imc <= 39.9)
+            categoria = "Obesidade grau II";
+        else
+            categoria = "Obesidade grau III";
+
+        Console.WriteLine($"Seu IMC é: {imc:F2}");
+        Console.WriteLine($"Categoria: {categoria}");
+
+        Console.ReadLine();
+    }
+}
