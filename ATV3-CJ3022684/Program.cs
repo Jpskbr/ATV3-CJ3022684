@@ -17,7 +17,7 @@ internal class Program
     }
 }
 
-//ATIVIDADE 3
+//ATIVIDADE 1
 {
     static void Main(string[] args)
     {
@@ -46,7 +46,7 @@ internal class Program
             }
         }
     }
-}// atividade 1
+}// atividade 2
 Console.Write("Digite um número: ");
 int numero = int.Parse(Console.ReadLine());
 
@@ -59,7 +59,7 @@ else
     Console.WriteLine("O número é ímpar.");
 }
 
-//atividade 2
+//atividade 3bs
 
 Console.Write("Digite o comprimento do primeiro lado: ");
 int lado1 = int.Parse(Console.ReadLine());
